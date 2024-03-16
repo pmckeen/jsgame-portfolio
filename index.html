@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>SBA 2023-2024 MS Tech Class Demo</title>
+    <script src="gameloader.js"></script>
+    <style src="gameloader.css"></style>
+</head>
+
+<body>
+    <ul id="gameList">
+        <li onclick="loadGame('1')">Game 1</li>
+        <li onclick="loadGame('2')">Game 2</li>
+        <!-- Add more games here -->
+    </ul>
+
+    <!-- Modal structure -->
+    <div id="gameModal" style="display:none;">
+        <div id="gamespace">
+            <div id='namespace' style="font-size: larger;"></div>
+            <div id='framespace'><canvas id="gamecanvas" width="800" height="480"></canvas></div>
+        </div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</body>
+
+</html>
