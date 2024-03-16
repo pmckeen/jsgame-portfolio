@@ -35,3 +35,10 @@ code {
     margin: 0 2px; /* Add some space around for better readability */
     box-shadow: inset 0 -1px 0 rgba(0,0,0,0.25); /* Optional: subtle inset shadow for depth */
 }
+#welcomePanel{
+    font-size:250%;
+}
+#gameList{
+    font-variant: small-caps;
+    color: blue;
+}
