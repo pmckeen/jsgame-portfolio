@@ -13,4 +13,25 @@
     /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+#gamespace {
+    background-color: white;
+    display: inline-flex; /* Wrap content without taking full width */
+    flex-direction: column;
+    padding: 20px; /* Add space around the content */
+    max-width: 100%; /* Ensure it doesn't overflow the modal */
+    box-sizing: border-box; /* Include padding in the element's total width */
+    border-radius: 10px;
+}
+code {
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 4px; /* Rounded corners */
+    padding: 2px 4px; /* Top and bottom, Left and right padding */
+    font-family: monospace; /* Monospace font for better code appearance */
+    font-size: 110%; /* Slightly larger font size, adjust as needed */
+    margin: 0 2px; /* Add some space around for better readability */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.25); /* Optional: subtle inset shadow for depth */
 }

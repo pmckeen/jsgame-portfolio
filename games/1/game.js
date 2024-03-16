@@ -3,7 +3,7 @@
 (function() {
     let namespace = document.getElementById("namespace");
 
-    namespace.innerHTML = "Hello World";
+    namespace.innerHTML = "Author: S. A.<br><code>A</code> and <code>D</code> move Left and Right. <code>W</code> Jumps.";
 
     var lastTimestamp = 0;
 

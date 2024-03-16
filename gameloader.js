@@ -19,11 +19,17 @@ function loadGame(gameName) {
     document.body.appendChild(scriptTag);
 
     // Show the modal
-    document.getElementById('gameModal').style.display = 'block';
+    document.getElementById('gameModal').style.display = '';
 }
 
-function closeModal() {
-    gameRunning = false;
-    document.getElementById('gameModal').style.display = 'none';
+function closeModal(event) {
+    if(event.target.classList.contains('closeTarget')){
+
+        gameRunning = false;
+        document.getElementById('gameModal').style.display = 'none';
+    }else{
+        console.log("Clicked on non-closing target: "+event.target.classList );
+    }
+    event.stopPropagation();
 
 }
