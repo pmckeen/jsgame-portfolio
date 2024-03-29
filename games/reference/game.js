@@ -13,21 +13,22 @@
     var playerXPosition = 400;
     var playerYPosition = 200;
     
-    document.addEventListener("keypress", function(event) {
+    const inputHandler = function (event) {
         //namespace.innerHTML += ` ${event.code}`;
-        if(event.code == 'KeyA'){
+        if (event.code == 'KeyA') {
             playerXPosition -= 10;
         }
-        if(event.code == 'KeyD'){
+        if (event.code == 'KeyD') {
             playerXPosition += 10;
         }
-        if(event.code == 'KeyW'){
+        if (event.code == 'KeyW') {
             playerYPosition -= 10;
         }
-        if(event.code == 'KeyS'){
+        if (event.code == 'KeyS') {
             playerYPosition += 10;
         }
-    });
+    };
+    document.addEventListener("keypress", inputHandler);
     
     function drawPlayer(x,y){
         // Draw Head
@@ -74,10 +75,11 @@
     
         /// ---- End
     
-        //if (lastTimestamp > 0) // Game Stop Criteria
-        //    return;
-    
-        requestAnimationFrame(gameLoop); // Ask for next frame
+        if(gameRunning){
+            requestAnimationFrame(gameLoop); // Ask for next frame
+        }else{
+            document.removeEventListener("keypress",inputHandler);
+        }
     }
     requestAnimationFrame(gameLoop); // Ask for first frame
 
