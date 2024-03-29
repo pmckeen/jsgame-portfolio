@@ -4,6 +4,10 @@ function loadGame(gameName) {
     // Determine the path to the game.js file based on your 
     gameRunning = true;
 
+    
+    let canvas = document.getElementById("gamecanvas");
+    let context = canvas.getContext("2d");
+    context.strokeStyle="Black";
     const gamePath = `games/${gameName}/game.js`; // Adjust if you're using a suffix instead
 
     // Remove any existing game script tag
