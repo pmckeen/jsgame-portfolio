@@ -30,15 +30,6 @@
     }
     document.addEventListener("keypress", inputHandler);
 
-    function drawPlayer(x, y) {
-        context.beginPath();
-        // Start at 20,20, make a circle with radius 10
-        context.arc(x + 40, y + 40, 25, 0, Math.PI * 2);
-        context.stroke();
-        context.fill();
-    }
-
-
     function drawFloor(x, y) {
         context.strokeStyle = 'Blue';
 
@@ -53,6 +44,40 @@
         context.stroke();
     }
 
+    function drawPlayer(x, y) {
+        context.beginPath()
+        // Start at 20,20, make a circle with radius 10
+        context.arc(x + 40, y + 40, 25, 0, Math.PI * 2);
+        context.stroke();
+        context.fill();
+
+        // Draw the back
+        context.beginPath();
+        // Move to bottom of head
+        context.moveTo(x + 40, y + 60);
+        // Draw a line twice as tall as the head (40)
+        context.lineTo(x + 40, y + 140);
+        context.stroke();
+
+        // Draw the arms
+        context.beginPath();
+        // Move to (house) left hand, below and to the left of the top of the neck
+        context.moveTo(x + 10, y + 100);
+        // Line to shoulder, then right hand
+        context.lineTo(x + 40, y + 70);
+        context.lineTo(x + 70, y + 100);
+        context.stroke();
+
+        // Draw the legs
+        context.beginPath();
+        // Move to left foot
+        context.moveTo(x + 10, y + 200);
+        // Line to bottom of back, then right foot
+        context.lineTo(x + 40, y + 140);
+        context.lineTo(x + 70, y + 200);
+        context.stroke();
+
+    }
 
     function gameLoop(timestamp) {
         let duration = timestamp - lastTimestamp;
